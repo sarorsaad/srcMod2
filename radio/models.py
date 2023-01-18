@@ -49,20 +49,20 @@ class TestRequest(models.Model):
         ('ankle', 'ankle'), ('foot', 'foot'), ('other-study', 'other-study')
 ])
 
-side_label = models.CharField(max_length=255, choices=[('right', 'right'), ('left', 'left'), ('none', 'none')])
-other_test = models.CharField(max_length=255, blank=True, null=True)
-need_contrast = models.CharField(max_length=3, choices=[('yes', 'yes'), ('no', 'no')])
-contrast_specification = models.CharField(
-    max_length=255, 
-    blank=True, 
-    null=True,
-    choices=[("oral", "Oral"), ("iv", "IV Contrast"), ("oral_iv", "Oral and IV Contrast")]
-)
+    side_label = models.CharField(max_length=255, choices=[('right', 'right'), ('left', 'left'), ('none', 'none')])
+    other_test = models.CharField(max_length=255, blank=True, null=True)
+    need_contrast = models.CharField(max_length=3, choices=[('yes', 'yes'), ('no', 'no')])
+    contrast_specification = models.CharField(
+        max_length=255, 
+        blank=True, 
+        null=True,
+        choices=[("oral", "Oral"), ("iv", "IV Contrast"), ("oral_iv", "Oral and IV Contrast")]
+    )
 
-allergies = models.CharField(max_length=255, choices=[('yes', 'yes'), ('no', 'no')])
-allergy_specification = models.CharField(max_length=255, blank=True, null=True)
-physician = models.CharField(max_length=255)
-technician = models.CharField(max_length=255)
-radiologist = models.CharField(max_length=255)
-def __str__(self):
-        return self.name
+    allergies = models.CharField(max_length=255, choices=[('yes', 'yes'), ('no', 'no')])
+    allergy_specification = models.CharField(max_length=255, blank=True, null=True)
+    physician = models.CharField(max_length=255)
+    technician = models.CharField(max_length=255)
+    radiologist = models.CharField(max_length=255)
+    def __str__(self):
+            return self.name
